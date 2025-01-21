@@ -1,0 +1,48 @@
+.table-container {
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+.bg-white {
+    background-color: aliceblue;
+}
+
+.bg-green {
+    background-color: rgb(169, 255, 167);
+}
+
+.bg-redlite {
+    background-color: rgb(248, 209, 209);
+}
+
+.bg-greenlite {
+    background-color: rgb(226, 255, 225);
+}
+
+.bg-red {
+    background-color: rgb(252, 148, 148);
+}
+
+.bg-yellow {
+    background-color: rgb(247, 236, 187);
+}
+
+.grey {
+    color: rgb(182, 178, 178);
+}
+
+.td-border {
+    border: 3px dashed black;
+}
