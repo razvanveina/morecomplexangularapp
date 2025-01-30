@@ -1,0 +1,52 @@
+<div class="p-4 max-w-lg mx-auto">
+    <div class="grid grid-cols-5 gap-2 mb-4">
+        <input class="border p-2" [(ngModel)]="newEvent.name" placeholder="Name" />
+        <input class="border p-2" type="number" [(ngModel)]="newEvent.hh" placeholder="Hour" />
+        <input class="border p-2" type="number" [(ngModel)]="newEvent.mm" placeholder="Minute" />
+        <input class="border p-2" type="number" [(ngModel)]="newEvent.duration" placeholder="Duration" />
+        <input class="border p-2" type="number" [(ngModel)]="newEvent.repetition" placeholder="Repetition" />
+    </div>
+    <button class="bg-blue-500 text-white px-4 py-2 rounded" (click)="addEvent()">Add Event</button>
+    <table class="w-full mt-4 border-collapse border border-gray-300">
+        <thead>
+            <tr class="bg-gray-100">
+                <th class="border p-2">Select</th>
+                <th class="border p-2">Name</th>
+                <th class="border p-2">Hour</th>
+                <th class="border p-2">Minute</th>
+                <th class="border p-2">Duration</th>
+                <th class="border p-2">Repetition</th>
+                <th class="border p-2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let event of events; let i = index" class="border">
+                <td class="border p-2">
+                    <input type="checkbox" [(ngModel)]="event.selected" />
+                </td>
+                <td class="border p-2">{{ event.name }}</td>
+                <td class="border p-2">{{ event.hh }}</td>
+                <td class="border p-2">{{ event.mm }}</td>
+                <td class="border p-2">{{ event.duration }}</td>
+                <td class="border p-2">{{ event.repetition }}</td>
+                <td class="border p-2">
+                    <button class="bg-red-500 text-white px-2 py-1 rounded" (click)="deleteEvent(i)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="bg-blue-500 text-white px-4 py-2 rounded" (click)="performComputation()">Generate</button>
+    <input class="border p-2" type="number" [(ngModel)]="offset" placeholder="Offset" />
+    <table class="w-full mt-4 border-collapse border border-gray-300">
+        <thead>
+            <tr class="bg-gray-100">
+                <th class="border p-2">Solution</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let sn of result; let i = index" class="border">
+                <div [innerHTML]="getSNString(sn)"></div>
+            </tr>
+        </tbody>
+    </table>
+</div>

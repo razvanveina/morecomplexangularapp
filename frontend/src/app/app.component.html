@@ -1,24 +1,5 @@
 <div style="text-align:center; margin-top:50px;">
   <div class="table-container">
-    <table border="1">
-      <thead>
-        <tr>
-          <th *ngFor="let column of columns">{{column}}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let row of rows; let i = index">
-          <td>{{ row.hour }}</td>
-          <td *ngFor="let dr of row.dataRecord; let j = index" [ngClass]="getBackgroundClass(dr, i, j)">
-            <span class="grey">{{dr.negative}}</span>
-            <button (click)="minusClick(i, j)">-</button> &nbsp;&nbsp;&nbsp;
-            <B>{{ displayDataRecordValue(dr) }}</B> &nbsp;&nbsp;&nbsp;
-            <button (click)="plusClick(i, j)">+</button>
-            <span class="grey">{{dr.positive}}</span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
   </div>
   <button (click)="saveData()">Save</button>
 </div>
